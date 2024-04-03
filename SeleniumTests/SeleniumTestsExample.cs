@@ -39,7 +39,7 @@ namespace SeleniumTests
             driver.FindElement(By.ClassName("shopping_cart_link")).Click();
             Assert.AreEqual(driver.Url, "https://www.saucedemo.com/cart.html");
 
-            // heck cart contents
+            // heck cart contents (alternativne misto xpath)
             Assert.IsTrue(driver.FindElement(By.Id("item_4_title_link")).Displayed);  // backpack
             Assert.IsTrue(driver.FindElement(By.Id("item_0_title_link")).Displayed);  // light version
 
@@ -53,7 +53,7 @@ namespace SeleniumTests
             driver.FindElement(By.Id("continue")).Click();
 
             // mock checkout overview
-            // Assert.IsTrue(driver.FindElement(By.ClassName("summary_info")).Displayed);
+            Assert.IsTrue(driver.FindElement(By.ClassName("summary_info")).Displayed);
 
             // finish ordr
             driver.FindElement(By.Id("finish")).Click();
